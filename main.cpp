@@ -24,7 +24,7 @@ int main() {
 	integers.push_back(123);
 
 
-	std::cout <<"Vector contains: " << integers.size() << " elements: ";
+	std::cout <<"Vector size: " << integers.size() << " capacity: " << integers.capacity() << " elements: ";
 	DisplayVector(integers);
 
 	// erase one element at the end
@@ -32,8 +32,14 @@ int main() {
 	integers.pop_back();
 
 	std::cout << "After a call to 2x pop_back()" << std::endl;
-	std::cout <<"Vector contains: " << integers.size() << " elements: ";
+	std::cout <<"Vector size: " << integers.size() << " capacity: " << integers.capacity() << " elements: ";
 	DisplayVector(integers);
+
+	std::cout << "integers.reserve(20)" << std::endl;
+	integers.reserve(20);
+	std::cout <<"Vector size: " << integers.size() << " capacity: " << integers.capacity() << " elements: " << std::endl;
+	DisplayVector(integers);
+
 
 	return 0;
 }
